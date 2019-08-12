@@ -1,0 +1,247 @@
+@charset "utf-8";
+
+/*********重置样式**********/
+*{
+    margin: 0;  /* 清除内外边距 */
+    padding: 0;
+    box-sizing: border-box;  /* 统一 width */
+    -webkit-box-sizing: border-box;
+}
+html, body{
+    -webkit-overflow-scrolling: touch;  /* 解决IOS默认滑动很卡的情况 */
+    font-family: sans-serif, Arial, Tahoma, 'Microsoft YaHei', '宋体';
+    -ms-text-size-adjust: 100%; /* 解决 iPhone 横屏时默认会放大文字 */
+    -webkit-text-size-adjust: 100%;
+}
+textarea{
+    resize: none;  /* 取消改变大小 */
+}
+input, textarea, button, select{
+    -webkit-appearance: none;  /* 取消默认样式 */
+    outline: none;
+}
+input[type="radio"]{
+    -webkit-appearance: radio;
+}
+input[type="checkbox"]{
+    -webkit-appearance: checkbox;
+}
+select{
+    -webkit-appearance: menulist;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    color: #F0F0F0;
+}
+a, a:hover, a:visited, a:active, a:link, a:focus{
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;  /* safari ios 清除背景色 */
+}
+ul, li{
+    list-style: none;
+}
+
+
+/*********公共样式**********/
+.clearfixd:after{
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    zoom: 1;
+}
+.hide{
+    display: none;
+}
+
+.txt_break{
+    /* word-break: break-all; */  /* 英文断词换行 */
+    word-wrap: break-word;  /* 英文整词换行 */
+    white-space: pre-wrap;
+}
+.txt_nowrap{
+    white-space: nowrap;
+}
+.txt_ellipsis{
+    display: -webkit-box;
+    /* -webkit-line-clamp: 2; */  /* 设置超出多少行后省略 */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.txt_indent{
+    text-indent: 2em;
+}
+
+/*********topic**********/
+.flex-box{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+}
+.m-icon{
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(../../img/sprite.svg);
+    background-size: 3em auto;
+    width: 1em;
+    height: 1em;
+}
+.m-icon-bluev{
+    background-position: -1em -4em;
+}
+.topic{
+    position: relative;
+}
+.topic-header{
+    padding: 0 .26rem;
+}
+.topic-header-pic{
+    position: relative;
+    width: .8rem;
+    height: .8rem;
+    border-radius: 50%;
+    /* overflow: hidden; */
+}
+.topic-header-pic>img{
+    border-radius: 50%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.topic-header-pic>i{
+    position: absolute;
+    font-size: .28rem;
+    right: -.01rem;
+    bottom: -.01rem;
+}
+.topic-header-info{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    /* align-items: center; */
+    width: 100%;
+    min-width: 0;
+    /* -webkit-line-clamp: 1; */
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.topic-header-info-con{
+    margin-left: .26rem;
+}
+.topic-header-info-con>h1{
+    display: block;
+    font-size: .32rem;
+    color: #333;
+    line-height: 1.4;
+    -webkit-line-clamp: 1;
+}
+.topic-header-info-con>h1>a{
+    color: #333;
+}
+.topic-header-info-con>p{
+    display: block;
+    font-size: .24rem;
+    color: #939393;
+    line-height: 1.5;
+    -webkit-line-clamp: 1;
+}
+.topic-header-info-con>p>span{
+    color: #939393;
+}
+.topic-content{}
+.topic-content-box{
+    padding: .26rem;
+}
+.topic-content-box>p{
+    font-size: .34rem;
+    color: #333;
+    line-height: 1.5;
+}
+.topic-content-box-media{
+    width: 3rem;
+    height: 3rem;
+    margin-top: .2rem;
+}
+.single-img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.single-img>img{
+    display: block;
+    width: 100%;
+}
+.topic-footer{
+    position: relative;
+    width: 7.5rem;
+    margin: 0 auto;
+    background: #fff;
+    border-top: .01rem solid #f3f3f3;
+
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+}
+.topic-footer>a{
+    width: 33.333%;
+    height: .66rem;
+    text-align: center;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+.topic-footer>a>i{
+    position: relative;
+    overflow: hidden;
+    margin-right: .08rem;
+}
+.topic-footer>a>i>img{
+    position: absolute;
+    width: .83rem;
+    height: .29rem;
+}
+.topic-footer>a>b{
+    font-size: .26rem;
+    font-weight: normal;
+    color: #3c3c3c;
+    line-height: 1;
+}
+.topic-aside{
+    position: relative;
+    width: 7.5rem;
+    margin: 0 auto;
+}
+.topic-aside>img{
+    display: block;
+    width: 100%;
+}
+.topic-repost>i{
+    width: .26rem;
+    height: .29rem;
+}
+.topic-repost>i>img{
+    left: 0;
+}
+
+.topic-comment>i{
+    width: .27rem;
+    height: .29rem;
+}
+.topic-comment>i>img{
+    left: -.26rem;
+}
+
+.topic-praise>i{
+    width: .31rem;
+    height: .29rem;
+}
+.topic-praise>i>img{
+    left: -.53rem;
+}
